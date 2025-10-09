@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Template Syntax</title>
+</head>
+<body>
+    <div style="background-color: aqua; display: inline-block;">
+        <h3>Variables in Django</h3>
+        <p>
+            Hello, my name is {{ name | upper }}.<br>
+            I am {{ age }} years old.<br>
+            I study {{ course }}, and the length of {{ course }} is {{ course | length }}
+        </p>
+    </div><br><br>
+
+    <div style="background-color: chocolate; display: inline-block;">
+        <h3>Tags in Django</h3>
+        <ol>
+            {% for name in names %}
+            <li>{{ name }}</li>
+            {% if name|slice:":1" == "P" %}
+            <li style="font-size: large;"><b>{{ name }}</b></li>
+            {% endif %}
+            {% endfor %}
+        </ol>
+    </div><br><br>
+
+    <div style="background-color: burlywood; display: inline-block;">
+        <h3>Comment Tag</h3>
+        {% comment "this was the original welcome message" %}
+        <h1>I am commented out. Sorry !!!</h1>
+        {% endcomment %}
+    </div>
+
+
+</body>
+</html>
