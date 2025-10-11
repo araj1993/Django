@@ -2,7 +2,7 @@
 
 ## Create and activate a Python Virtual Environment in Windows
  
- - python -m venv <vm-name>
+ - python -m venv <vm-name>  
  - .\<vm-name>\Scripts\activate.bat
 
 ### Check the installtion is successfull py typing the command slmgr /xpr
