@@ -274,17 +274,9 @@ resume_data = {
 - **Python Version**: 3.13.5
 - **Django Version**: 5.2.7
 - **Environment**: Virtual environment (venv)
-
-## Next Steps
-
-1. Add more resume sections (projects, certifications, etc.)
-2. Implement admin interface for editing resume data
-3. Add multiple resume templates
-4. Implement user authentication for multiple resumes
-5. Add export functionality (PDF generation)
-
+  
 ---
 
-**Author**: Django Resume Builder  
+**Author**: Anu Prithviraj  
 **Created**: October 2025  
 **Framework**: Django 5.2.7
