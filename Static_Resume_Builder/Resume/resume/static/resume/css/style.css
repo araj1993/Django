@@ -1,0 +1,410 @@
+/* Resume Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.resume-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+/* Personal Section Styles */
+.personal-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.personal-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.name-title h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.name-title h3 {
+    font-size: 1.3em;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.gender-icon .emoji {
+    font-size: 4em;
+    display: block;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.contact-details {
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.contact-icon {
+    font-size: 1.2em;
+    margin-right: 15px;
+    width: 30px;
+}
+
+.contact-label {
+    font-weight: bold;
+    margin-right: 10px;
+    min-width: 60px;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.summary {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.summary h4 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.summary p {
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+/* Skills section in personal section */
+.personal-section .skills {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+.personal-section .skills h4 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: white;
+}
+
+.personal-section .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.personal-section .skill-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 4px solid #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.personal-section .skill-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px);
+}
+
+.personal-section .skill-name {
+    font-weight: bold;
+    color: white;
+    font-size: 0.95em;
+}
+
+.personal-section .skill-rating {
+    display: flex;
+    align-items: center;
+}
+
+.personal-section .stars {
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+/* Professional Section Styles */
+.professional-section {
+    background: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.professional-section .section-title {
+    color: #2c3e50;
+    text-shadow: none;
+}
+
+.professional-content {
+    flex: 1;
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 35px;
+}
+
+section h3 {
+    color: #2c3e50;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+    position: relative;
+}
+
+section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #e74c3c;
+}
+
+
+
+/* Profile Styles */
+.profile-item {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #9b59b6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.profile-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.profile-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-points li {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1em;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.profile-points li:before {
+    content: "●";
+    color: #9b59b6;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.profile-points li:last-child {
+    margin-bottom: 0;
+}
+
+/* Education Styles */
+.education-item {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #e74c3c;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.education-item h4 {
+    color: #2c3e50;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.education-item p {
+    margin-bottom: 8px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Experience Styles */
+.experience-item {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #27ae60;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.experience-item h4 {
+    color: #2c3e50;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.experience-item p {
+    margin-bottom: 10px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.experience-item p:last-child {
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resume-container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    
+    .personal-section, .professional-section {
+        padding: 30px 20px;
+    }
+    
+    .name-title h1 {
+        font-size: 2em;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gender-icon .emoji {
+        font-size: 3em;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    .contact-label {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 10px;
+        border-radius: 8px;
+    }
+    
+    .personal-section, .professional-section {
+        padding: 20px 15px;
+    }
+    
+    .name-title h1 {
+        font-size: 1.8em;
+    }
+    
+    .section-title {
+        font-size: 1.6em;
+    }
+    
+    .skill-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .container {
+        box-shadow: none;
+        max-width: none;
+        margin: 0;
+    }
+    
+    .resume-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .personal-section {
+        background: #f0f0f0 !important;
+        color: black !important;
+    }
+}

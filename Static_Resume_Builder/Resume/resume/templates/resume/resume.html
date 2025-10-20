@@ -1,0 +1,131 @@
+{% extends 'resume/base.html' %}
+{% load static %}
+
+{% block title %}{{ resume.name }} - Resume{% endblock %}
+
+{% block content %}
+<div class="resume-container">
+    <!-- Personal Details Section -->
+    <div class="personal-section">        
+        <div class="personal-content">
+            <div class="profile-info">
+                <div class="name-title">
+                    <h1>{{ resume.name }}</h1>
+                    <h3>{{ resume.title }}</h3>
+                </div>
+                
+                <!-- Gender-specific emoji -->
+                <div class="gender-icon">
+                    {% if resume.gender == 'male' %}
+                        <span class="emoji">👨‍💻</span>
+                    {% elif resume.gender == 'female' %}
+                        <span class="emoji">👩‍💻</span>
+                    {% else %}
+                        <span class="emoji">🧑‍💻</span>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span class="contact-label">Email:</span>
+                    <a href="mailto:{{ resume.email }}">{{ resume.email }}</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span class="contact-label">Phone:</span>
+                    <span>{{ resume.phone }}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🎂</span>
+                    <span class="contact-label">Age:</span>
+                    <span>{{ resume.age }}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span class="contact-label">Location:</span>
+                    <span>{{ resume.location }}</span>
+                </div>
+                
+                <!-- Skills Section with Star Ratings -->
+                <div class="skills">
+                    <h4>Technical Skills</h4>
+                    <div class="skills-grid">
+                        {% for skill in resume.skills %}
+                            <div class="skill-item">
+                                <span class="skill-name">{{ skill.name }}</span>
+                                <div class="skill-rating">
+                                    <!-- Dynamic 5-star rating system -->
+                                    <span class="stars">
+                                        {% for i in "12345" %}
+                                            {% if forloop.counter <= skill.rating %}
+                                                ⭐
+                                            {% else %}
+                                                ☆
+                                            {% endif %}
+                                        {% endfor %}
+                                    </span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Summary Section -->
+            <div class="summary">
+                <h4>Professional Summary</h4>
+                <p>{{ resume.summary }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Professional Details Section -->
+    <div class="professional-section">
+        <h2 class="section-title">Professional Details</h2>
+
+        
+        <div class="professional-content">
+            <!-- Profile Section -->
+            <section class="profile">
+                <h3>Professional Profile</h3>
+                <div class="profile-item">
+                    <ul class="profile-points">
+                        <li>5+ years of expertise in manual and automated testing across biological and healthcare domains</li>
+                        <li>Skilled in test planning, execution, and defect management using Selenium, Python, and JIRA</li>
+                        <li>Proven track record in API testing, database validation, and cross-platform testing</li>
+                        <li>Strong background in Agile/Scrum environments with quality assurance best practices</li>
+                        <li>Specialized in regulatory compliance testing for scientific applications</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="education">
+                <h3>Education</h3>
+                <div class="education-item">
+                    <h4>{{ resume.education.degree }}</h4>
+                    <p><strong>{{ resume.education.university }}</strong></p>
+                    <p>Graduated: {{ resume.education.year }}</p>
+                    {% if resume.education.gpa %}
+                        <p>GPA: {{ resume.education.gpa }}</p>
+                    {% endif %}
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="experience">
+                <h3>Professional Experience</h3>
+                {% for job in resume.experience %}
+                    <div class="experience-item">
+                        <h4>{{ job.position }}</h4>
+                        <p><strong>{{ job.company }}</strong> | {{ job.duration }}</p>
+                        <p>{{ job.description }}</p>
+                    </div>
+                {% endfor %}
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'resume_app/styles.css' %}">
+</head>
+<body>
+    <h1>
+        {% if gender == 'male' %}
+            👨‍💻
+        {% elif gender == 'female' %}
+            👩‍💻
+        {% else %}
+            🧑‍💻
+        {% endif %}
+        {{ name }}
+    </h1>
+
+    <p><strong>Email:</strong> {{ email }}</p>
+
+    <h2>Education</h2>
+    <ul>
+        {% for edu in education %}
+            <li>{{ edu.degree }} - {{ edu.year }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Skills</h2>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Experience</h2>
+    <p>{{ experience }}</p>
+</body>
+</html>
