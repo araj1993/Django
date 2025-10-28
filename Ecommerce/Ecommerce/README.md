@@ -10,22 +10,18 @@
 
       - The store app was successfully added to the INSTALLED_APPS section in settings.py.
        
-        ![alt text](Ecommerce\screenshots\installed_app.png)
 
 ### 2. URL Configuration
 
       - The store app’s URLs were included in the main project’s URL configuration file (Ecom/urls.py).
-      ![alt text](image-1.png)
 
       - A dedicated urls.py file was created inside the store application folder to manage its URL routing.
-      ![alt text](image-2.png)
 
 ### 3. Model Creation
 
       - Models were defined in store/models.py according to the provided schema.
 
       - Appropriate ForeignKey relationships were established between models to ensure data integrity and relational consistency.
-      ![alt text](image-3.png)
 
 ### 4. Database Setup
 
@@ -33,19 +29,9 @@
 
       - Database migrations were created and applied successfully to generate the necessary tables in the database.
 
-      - admin/user table
-      ![alt text](image-4.png) 
-      - order table 
-      ![alt text](image-5.png)
-      - order_item table
-      ![alt text](image-6.png)
-      - product table
-      ![alt text](image-7.png)
-
 ### 5. Admin Interface
 
       - All created models were registered in the Django admin site to enable easy data management.
-      ![alt text](image-8.png)
 
       - Admin access was verified and functional.
 
