@@ -9,7 +9,8 @@
        **python manage.py startapp store**
 
       - The store app was successfully added to the INSTALLED_APPS section in settings.py.
-       ![alt text](image.png)
+       
+        ![alt text](Ecommerce\screenshots\installed_app.png)
 
 ### 2. URL Configuration
 
