@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %}Order History - E-Commerce Platform{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2><i class="fas fa-history me-2"></i>Order History</h2>
+                <span class="badge bg-info fs-6">{{ orders.count }} Orders</span>
+            </div>
+        </div>
+    </div>
+    
+    {% if orders %}
+        <div class="row">
+            {% for order in orders %}
+                <div class="col-12 mb-3">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0">
+                                <i class="fas fa-receipt me-2"></i>Order #{{ order.id }}
+                            </h6>
+                            <small class="text-muted">{{ order.order_date|date:"F d, Y g:i A" }}</small>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h6>Items:</h6>
+                                    {% if order.items.all %}
+                                        <ul class="list-unstyled">
+                                            {% for item in order.items.all %}
+                                                <li class="mb-2">
+                                                    <div class="d-flex justify-content-between">
+                                                        <span>
+                                                            <i class="fas fa-box me-1"></i>
+                                                            {{ item.product.name }} 
+                                                            <small class="text-muted">({{ item.quantity }}x)</small>
+                                                        </span>
+                                                        <span class="text-primary">
+                                                            ${{ item.product.price }}
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% else %}
+                                        <p class="text-muted">No items in this order.</p>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-4 text-end">
+                                    <div class="card bg-light">
+                                        <div class="col-md-4">
+                                            <h6>Order Total</h6>
+                                            <p class="h5 text-primary mb-0">
+                                                ${{ order.get_total|floatformat:2 }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                <i class="fas fa-clock me-1"></i>
+                                Ordered on {{ order.order_date|date:"F d, Y" }} at {{ order.order_date|time:"g:i A" }}
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center py-5">
+                    <i class="fas fa-shopping-cart fa-5x text-muted mb-4"></i>
+                    <h4 class="text-muted">No Orders Yet</h4>
+                    <p class="text-muted">You haven't placed any orders yet. Start shopping to see your order history here!</p>
+                    <a href="{% url 'products' %}" class="btn btn-primary">
+                        <i class="fas fa-shopping-bag me-1"></i>Start Shopping
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    
+    <div class="row mt-4">
+        <div class="col-12 text-center">
+            <a href="{% url 'dashboard' %}" class="btn btn-secondary me-2">
+                <i class="fas fa-tachometer-alt me-1"></i>Back to Dashboard
+            </a>
+            <a href="{% url 'products' %}" class="btn btn-primary">
+                <i class="fas fa-shopping-bag me-1"></i>Continue Shopping
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

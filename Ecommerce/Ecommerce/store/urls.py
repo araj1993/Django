@@ -1,5 +1,7 @@
 from django.urls import path
+from . import views
 
 urlpatterns = [
-    # Add store app views here
+    path('products/', views.products_view, name='products'),
+    path('orders/', views.order_history_view, name='order_history'),
 ]
